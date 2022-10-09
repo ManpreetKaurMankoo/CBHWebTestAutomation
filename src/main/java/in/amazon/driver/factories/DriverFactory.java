@@ -14,11 +14,9 @@ public final class DriverFactory {
 
 	private static final Map<RunModeType, Supplier<IDriver>> MAP = new EnumMap<>(RunModeType.class);
 	private static final Supplier<IDriver> LOCAL = LocalDriverImpl::new;
-	//	private static final Supplier<IDriver> REMOTE = RemoteDriverImpl::new;
 
 	static {
 		MAP.put(RunModeType.LOCAL, LOCAL);
-		//		MAP.put(RunModeType.REMOTE, REMOTE);
 	}
 
 	public static IDriver getDriver(RunModeType runMode) {

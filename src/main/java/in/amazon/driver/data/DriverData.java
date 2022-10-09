@@ -8,7 +8,6 @@ import lombok.Getter;
 @Builder
 public class DriverData {
 
-	//	private RemoteModeType remoteMode;
 	private BrowserType browserName;
 
 }

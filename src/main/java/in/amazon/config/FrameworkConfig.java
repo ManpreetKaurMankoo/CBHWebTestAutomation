@@ -1,15 +1,10 @@
 package in.amazon.config;
 
-import java.net.URL;
-
 import org.aeonbits.owner.Config;
 
 import in.amazon.configconverters.StringToBrowserTypeConverter;
-import in.amazon.configconverters.StringToRemoteModeTypeConverter;
 import in.amazon.configconverters.StringToRunModeTypeConverter;
-import in.amazon.configconverters.StringToUrlConverter;
 import in.amazon.driver.enums.BrowserType;
-import in.amazon.driver.enums.RemoteModeType;
 import in.amazon.driver.enums.RunModeType;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
@@ -28,18 +23,9 @@ public interface FrameworkConfig extends Config {
 	@ConverterClass(StringToBrowserTypeConverter.class)
 	BrowserType browserName();
 
-	@DefaultValue("SELENOID")
-	@Key("remotemode")
-	@ConverterClass(StringToRemoteModeTypeConverter.class)
-	RemoteModeType remoteMode();
-
 	@DefaultValue("LOCAL")
 	@Key("runmode")
 	@ConverterClass(StringToRunModeTypeConverter.class)
 	RunModeType runMode();
-
-	@Key("selenoidurl")
-	@ConverterClass(StringToUrlConverter.class)
-	URL selenoidUrl();
 
 }
