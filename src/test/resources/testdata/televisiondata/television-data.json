@@ -1,0 +1,15 @@
+[
+  {
+  	"menuData": {
+  		"hamburgerMainMenu": "TV, Appliances, Electronics",
+    	"hamburgerSubMenu": "Televisions"
+    	},
+    "filterData": {
+	    "filterSection":  "Brands",
+    	"brandName": "Samsung"
+    	},
+    "sortByOption": "Price: High to Low",
+    "highestPricedItemNo": "2",
+    "featureSectionText": "About this item"
+  }
+]
