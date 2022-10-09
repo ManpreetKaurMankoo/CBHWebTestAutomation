@@ -16,7 +16,7 @@ public final class Driver {
 	public static void initialiseDriver() {
 
 		DriverData driverData = DriverData.builder()
-				.remoteMode(getConfig().remoteMode())
+				//				.remoteMode(getConfig().remoteMode())
 				.browserName(getConfig().browserName())
 				.build();
 
