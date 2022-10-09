@@ -24,6 +24,11 @@ jobs:
         with:
           step: restore
           
+      - name: Install Chrome
+        uses: nanasess/setup-chromedriver@v1
+        
+      - run: chromedriver --url-base=/wd/hub &
+          
       - name: Run the Web tests
         run: mvn clean test
         
