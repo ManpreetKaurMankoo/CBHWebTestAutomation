@@ -28,7 +28,7 @@ public interface FrameworkConfig extends Config {
 	@ConverterClass(StringToBrowserTypeConverter.class)
 	BrowserType browserName();
 
-	@DefaultValue("SELENIUMGRID")
+	@DefaultValue("SELENOID")
 	@Key("remotemode")
 	@ConverterClass(StringToRemoteModeTypeConverter.class)
 	RemoteModeType remoteMode();
@@ -41,9 +41,5 @@ public interface FrameworkConfig extends Config {
 	@Key("selenoidurl")
 	@ConverterClass(StringToUrlConverter.class)
 	URL selenoidUrl();
-
-	@Key("seleniumgridurl")
-	@ConverterClass(StringToUrlConverter.class)
-	URL seleniumGridUrl();
 
 }
