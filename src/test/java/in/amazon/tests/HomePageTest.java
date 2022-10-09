@@ -45,6 +45,8 @@ public final class HomePageTest extends BaseTest {
 		.assertAll();
 	}
 
+
+
 	//	@Story("Asserting the 'About this item' section text of the 2nd highest priced television")
 	//	@Description("Verify the 'About this item' section text of the 2nd highest priced television is present")
 	//	@Severity(SeverityLevel.CRITICAL)

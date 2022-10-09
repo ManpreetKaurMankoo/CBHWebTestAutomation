@@ -16,26 +16,16 @@ public final class Driver {
 	public static void initialiseDriver() {
 
 		DriverData driverData = DriverData.builder()
-				//	.runMode(getConfig().runMode())
 				.remoteMode(getConfig().remoteMode())
 				.browserName(getConfig().browserName())
 				.build();
 
-		System.out.println("remoteMode(): " + getConfig().remoteMode());
 		System.out.println("remoteMode from driverData: " + driverData.getRemoteMode());
-
-		System.out.println("driverData: " + driverData);
-		//				new DriverData(getConfig().remoteMode(),
-		//				getConfig().browserName());
 
 		if(Objects.isNull(DriverManager.getDriver())) {
 			WebDriver driver = DriverFactory
 					.getDriver(getConfig().runMode())
 					.getDriver(driverData);
-			//	.getDriver(driverData);
-			//			System.out.println("Inside initiali");
-			//			System.out.println("browserName: " + browserName);
-			//			System.out.println("runMode: " + runMode);
 			DriverManager.setDriver(driver);
 		}
 	}

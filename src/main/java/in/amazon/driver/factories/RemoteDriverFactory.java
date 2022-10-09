@@ -22,6 +22,7 @@ public final class RemoteDriverFactory {
 		MAP.put(RemoteModeType.SELENIUMGRID, SELENIUM_GRID);
 	}
 
+
 	public static WebDriver getDriver(RemoteModeType remoteModeType, BrowserType browserName) {
 		System.out.println("Remote driver factory entered");
 		System.out.println("remoteModeType: " + remoteModeType.toString());

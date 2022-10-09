@@ -13,6 +13,7 @@ public class StringToRemoteModeTypeConverter implements Converter<RemoteModeType
 	public RemoteModeType convert(Method method, String remoteMode) {
 		Map<String, RemoteModeType> remoteModeTypeMap = Map.of("SELENOID", RemoteModeType.SELENOID,
 				"SELENIUMGRID", RemoteModeType.SELENIUMGRID);
+
 		//		return remoteModeTypeMap.getOrDefault(remoteMode.trim().toUpperCase(), RemoteModeType.SELENOID);
 		return remoteModeTypeMap.get(remoteMode.trim().toUpperCase());
 	}

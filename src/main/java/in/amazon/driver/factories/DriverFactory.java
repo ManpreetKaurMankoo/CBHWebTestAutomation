@@ -26,6 +26,7 @@ public final class DriverFactory {
 		return MAP.get(runMode).get();
 	}
 
+
 	//	public static WebDriver getDriver(DriverData driverData) {
 	//		if(driverData.getRunMode().toString().equalsIgnoreCase("local"))
 	//			return LocalDriverImpl.getDriver(driverData.getBrowserName());
