@@ -18,17 +18,5 @@ jobs:
           distribution: 'temurin'
           java-version: 11
           
-      - name: Restore Maven cache
-        uses: skjolber/maven-cache-github-action@v1
-        continue-on-error: true
-        with:
-          step: restore
-          
       - name: Run the Web tests
         run: mvn clean test
-        
-      - name: Save Maven cache
-        uses: skjolber/maven-cache-github-action@v1
-        continue-on-error: true
-        with:
-          step: save
