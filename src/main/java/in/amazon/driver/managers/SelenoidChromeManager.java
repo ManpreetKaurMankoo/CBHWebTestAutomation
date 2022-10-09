@@ -11,7 +11,6 @@ public final class SelenoidChromeManager {
 	private SelenoidChromeManager() {}
 
 	public static WebDriver getDriver() {
-		System.out.println("Inside selenoid chrome manager");
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("browserName", "chrome");
 		capabilities.setCapability("browserVersion", "105.0");

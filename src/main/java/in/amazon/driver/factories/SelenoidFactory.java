@@ -21,7 +21,6 @@ public final class SelenoidFactory {
 	}
 
 	public static WebDriver getDriver(BrowserType browserName) {
-		System.out.println("Selenoid chrome selected");
 		return MAP.get(browserName).get();
 	}
 

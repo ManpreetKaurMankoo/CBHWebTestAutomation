@@ -13,10 +13,4 @@ public class LocalDriverImpl implements IDriver {
 		return LocalDriverFactory.getDriver(driverData.getBrowserName());
 	}
 
-	//public class LocalDriverImpl {
-	//
-	//	public static WebDriver getDriver(BrowserType browserName) {
-	//		return LocalDriverFactory.getDriver(browserName);
-	//	}
-
 }

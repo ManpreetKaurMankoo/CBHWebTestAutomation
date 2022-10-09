@@ -12,8 +12,7 @@ public class StringToRunModeTypeConverter implements Converter<RunModeType> {
 	@Override
 	public RunModeType convert(Method method, String runMode) {
 		Map<String, RunModeType> runModeTypeMap = Map.of("LOCAL", RunModeType.LOCAL, "REMOTE", RunModeType.REMOTE);
-		//		return runModeTypeMap.getOrDefault(runMode.trim().toUpperCase(), RunModeType.LOCAL);
-		return runModeTypeMap.get(runMode.trim().toUpperCase());
+		return runModeTypeMap.getOrDefault(runMode.trim().toUpperCase(), RunModeType.LOCAL);
 	}
 
 }

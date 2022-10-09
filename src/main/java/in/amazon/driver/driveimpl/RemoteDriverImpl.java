@@ -13,10 +13,4 @@ public class RemoteDriverImpl implements IDriver {
 		return RemoteDriverFactory.getDriver(driverData.getRemoteMode(), driverData.getBrowserName());
 	}
 
-	//public class RemoteDriverImpl {
-	//
-	//	public static WebDriver getDriver(RemoteModeType remoteMode, BrowserType browserName) {
-	//		return RemoteDriverFactory.getDriver(remoteMode, browserName);
-	//	}
-
 }

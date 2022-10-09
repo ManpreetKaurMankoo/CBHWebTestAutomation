@@ -26,18 +26,4 @@ public final class DriverFactory {
 		return MAP.get(runMode).get();
 	}
 
-
-	//	public static WebDriver getDriver(DriverData driverData) {
-	//		if(driverData.getRunMode().toString().equalsIgnoreCase("local"))
-	//			return LocalDriverImpl.getDriver(driverData.getBrowserName());
-	//		else {
-	//			System.out.println("Inside else - remote");
-	//			System.out.println("driverData.getBrowserName(): " + driverData.getBrowserName());
-	//			System.out.println("driverData.getBrowserName() - string: " + driverData.getBrowserName().toString());
-	//			System.out.println("driverData.getRemoteMode(): " + driverData.getRemoteMode());
-	//			System.out.println("driverData.getRemoteMode() - string: " + driverData.getRemoteMode().toString());
-	//			return RemoteDriverImpl.getDriver(driverData.getRemoteMode(), driverData.getBrowserName());
-	//		}
-	//	}
-
 }

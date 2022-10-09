@@ -20,8 +20,6 @@ public final class Driver {
 				.browserName(getConfig().browserName())
 				.build();
 
-		System.out.println("remoteMode from driverData: " + driverData.getRemoteMode());
-
 		if(Objects.isNull(DriverManager.getDriver())) {
 			WebDriver driver = DriverFactory
 					.getDriver(getConfig().runMode())

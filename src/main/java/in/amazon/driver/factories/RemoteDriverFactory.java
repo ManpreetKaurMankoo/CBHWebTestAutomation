@@ -15,18 +15,13 @@ public final class RemoteDriverFactory {
 
 	private static final Map<RemoteModeType, Function<BrowserType, WebDriver>> MAP = new EnumMap<>(RemoteModeType.class);
 	private static final Function<BrowserType, WebDriver> SELENOID = SelenoidFactory::getDriver;
-	private static final Function<BrowserType, WebDriver> SELENIUM_GRID = SeleniumGridFactory::getDriver;
 
 	static {
 		MAP.put(RemoteModeType.SELENOID, SELENOID);
-		MAP.put(RemoteModeType.SELENIUMGRID, SELENIUM_GRID);
 	}
 
 
 	public static WebDriver getDriver(RemoteModeType remoteModeType, BrowserType browserName) {
-		System.out.println("Remote driver factory entered");
-		System.out.println("remoteModeType: " + remoteModeType.toString());
-		System.out.println("browserName: " + browserName.toString());
 		return MAP.get(remoteModeType).apply(browserName);
 	}
 
