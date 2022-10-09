@@ -45,48 +45,6 @@ public final class HomePageTest extends BaseTest {
 		.assertAll();
 	}
 
-
-
-	//	@Story("Asserting the 'About this item' section text of the 2nd highest priced television")
-	//	@Description("Verify the 'About this item' section text of the 2nd highest priced television is present")
-	//	@Severity(SeverityLevel.CRITICAL)
-	//	@Test(dataProvider = "getData", groups = { "Smoke" }, priority = 1)
-	//	public void test2(TestData testData) {
-	//
-	//		TestData data = TelevisionDataBuilder.getTelevisionData(testData);
-	//
-	//		boolean isAboutThisItemTextPresent = HomePage.with(data)
-	//				.navigateViaHamburgerMenuToTelevisionPage()
-	//				.filterTelevision()
-	//				.sortProducts()
-	//				.goToRequiredProduct()
-	//				.switchWindowAndCheckAboutThisItemTextIsPresent();
-	//
-	//		TelevisionAssert.assertThat(isAboutThisItemTextPresent)
-	//		.isTrue()
-	//		.assertAll();
-	//	}
-	//
-	//	@Story("Asserting the 'About this item' section text of the 2nd highest priced television")
-	//	@Description("Verify the 'About this item' section text of the 2nd highest priced television is present")
-	//	@Severity(SeverityLevel.CRITICAL)
-	//	@Test(dataProvider = "getData", groups = { "Smoke" }, priority = 1)
-	//	public void test3(TestData testData) {
-	//
-	//		TestData data = TelevisionDataBuilder.getTelevisionData(testData);
-	//
-	//		boolean isAboutThisItemTextPresent = HomePage.with(data)
-	//				.navigateViaHamburgerMenuToTelevisionPage()
-	//				.filterTelevision()
-	//				.sortProducts()
-	//				.goToRequiredProduct()
-	//				.switchWindowAndCheckAboutThisItemTextIsPresent();
-	//
-	//		TelevisionAssert.assertThat(isAboutThisItemTextPresent)
-	//		.isTrue()
-	//		.assertAll();
-	//	}
-
 	@DataSupplier(name = "getData", runInParallel = true)
 	public StreamEx<TestData> getData() {
 		return DataSupplierUtils.getData(FrameworkConstants.getTelevisionDataFilePath(),
