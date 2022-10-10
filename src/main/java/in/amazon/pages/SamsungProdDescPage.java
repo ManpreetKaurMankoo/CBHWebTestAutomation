@@ -1,5 +1,7 @@
 package in.amazon.pages;
 
+import static in.amazon.utils.SeleniumUtils.closeChildWindAndSwitchToParent;
+
 import in.amazon.pages.components.productdescrptn.ProductDescComponent;
 
 public final class SamsungProdDescPage {
@@ -12,6 +14,10 @@ public final class SamsungProdDescPage {
 
 	public boolean isAboutThisItemTextPresent(String featureSectionText) {
 		return prodDescription.isRequiredTextPresent(featureSectionText);
+	}
+
+	public void closeChildWindowAndSwitchToParent() {
+		closeChildWindAndSwitchToParent();
 	}
 
 }

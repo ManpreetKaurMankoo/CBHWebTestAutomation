@@ -33,13 +33,13 @@ public final class ProductResultsPage {
 		return this;
 	}
 
-	public String switchToProdDescWindow() {
-		return SeleniumUtils.switchToChildWindow();
-	}
-
 	public ResultsAndDescpPagesFacade goToRequiredProduct() {
 		clickOnResultProductByPrice();
 		return new ResultsAndDescpPagesFacade(data);
+	}
+
+	public String switchToProdDescWindow() {
+		return SeleniumUtils.switchToChildWindow();
 	}
 
 }

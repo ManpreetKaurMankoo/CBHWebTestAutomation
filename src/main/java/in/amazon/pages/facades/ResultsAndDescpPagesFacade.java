@@ -1,7 +1,5 @@
 package in.amazon.pages.facades;
 
-import static in.amazon.utils.SeleniumUtils.closeChildWindAndSwitchToParent;
-
 import in.amazon.pages.ProductResultsPage;
 import in.amazon.pages.SamsungProdDescPage;
 import in.amazon.pojos.data.TestData;
@@ -18,14 +16,14 @@ public final class ResultsAndDescpPagesFacade {
 		this.data = data;
 	}
 
-	public void closeChildWindowAndSwitchToParent() {
-		closeChildWindAndSwitchToParent();
-	}
+	//	public void closeChildWindowAndSwitchToParent() {
+	//		closeChildWindAndSwitchToParent();
+	//	}
 
 	public boolean switchWindowAndCheckAboutThisItemTextIsPresent() {
 		productResultsPage.switchToProdDescWindow();
 		boolean isValuePresent =  samsungProdDescPage.isAboutThisItemTextPresent(data.getFeatureSectionText());
-		closeChildWindowAndSwitchToParent();
+		samsungProdDescPage.closeChildWindowAndSwitchToParent();
 		return isValuePresent;
 	}
 
