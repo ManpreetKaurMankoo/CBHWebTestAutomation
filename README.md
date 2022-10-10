@@ -65,7 +65,7 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 - Java
 - TestNG
 - Docker should be installed to support running the test using selenoid
------
+---
 ## Test execution
 
 How to run the tests (locally):
@@ -91,7 +91,7 @@ How to run the tests on selenoid using docker container:
 
 After running the above command, go to localhost:4444 and localhots:8080 to see the setup ready. Run the tests either through testng.xml or through maven. Execution could be seen at the above ports.
   
------
+---
 How to view the allure report:
 
 1. Execute the tests.
@@ -99,6 +99,6 @@ How to view the allure report:
   
 **allure serve**
   
------
+---
 ## Test Report
 
