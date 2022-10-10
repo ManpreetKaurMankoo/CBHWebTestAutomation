@@ -41,6 +41,7 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 - Uses Data Supplier to supply the data from JSON file to the test in form of stream. More data can be added to this file for the same test. For more tests, more such JSON files and data supplier can be added
 - Uses POJOs and builder pattern for building test data
 - Data is passed to each required page through constructors in page layers
+- Has one test cases that runs and passes on chrome
 - Has one assertion verifying the 'About this item' text is present on the Product Description Page. It is a custom fluent assertion using AssertJ, more assertions can be added in a fluent way
 - Uses explicit wait strategy (Facatory Method pattern) for interacting with the web elements
 - Uses dynamic xpath creation strategy during run time for elements having common locator xpaths
