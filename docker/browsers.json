@@ -1,0 +1,23 @@
+{
+    "chrome": {
+        "default": "105.0", // Check by giving diff version, do we need to pass version from properties file for below versions to get selected
+        "versions": {
+            "105.0": {
+                "image": "selenoid/chrome:105.0",
+                "port": "4444",
+                "path": "/",
+                "tmpfs" : {
+                  "/tmp": "size=128m"
+                }
+            },
+            "105.0_VNC": {
+                "image": "selenoid/vnc_chrome:105.0",
+                "port": "4444",
+                "path": "/",
+                "tmpfs" : {
+                  "/tmp": "size=128m"
+                }
+            }
+        }
+    }
+}
