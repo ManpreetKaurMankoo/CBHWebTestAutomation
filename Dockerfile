@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk-8
+FROM maven:3.10.1-jdk-8
 WORKDIR /home/cbhamazonassignment
 COPY src /home/cbhamazonassignment/src
 COPY pom.xml /home/cbhamazonassignment/pom.xml
