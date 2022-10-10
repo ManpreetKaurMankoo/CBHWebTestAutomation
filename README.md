@@ -109,33 +109,36 @@ The framework has the Dockerfile for creating its docker image. A workflow is cr
 ---
 ## Test Report
 
-1. After each test run, reports can be found under allure-results folder of the prject root
+1. After each test run, reports can be found under allure-results folder of the project root
   
-2. ![readmeallure1](https://user-images.githubusercontent.com/65030809/194899503-1336d5f2-8d7e-46ac-b7eb-8d9a317e10f1.png)
-
-  The Allure report 'Overview' section shows the following:
+2. The Allure report 'Overview' section shows the following:
   - Report date
   - Start and end dates of the test run
   - No. of tests passed, failed, skipped (In our case, only one test case available, so passed: 1)
   - Test suites in the framework
   - Features by stories in the framework
   
-3. ![readmeallure2](https://user-images.githubusercontent.com/65030809/194899603-586ed548-af97-4456-80c9-156b3de8b902.png)
+  ![readmeallure1](https://user-images.githubusercontent.com/65030809/194900071-f9b813dc-fc92-4a51-aaad-c157995cfce7.png)
 
-  The 'Behaviours' section shows the following:
+  
+3. The 'Behaviours' section shows the following:
   - Epic with its count
   - Feature within Epic (with its count)
   - Story within Feature (with its count)
   - Test within Story with the time taken to run it
   - No. of tests passed, failed, skipped, broken, etc with colour schemes
   
-4. ![readmeallure3](https://user-images.githubusercontent.com/65030809/194899671-70ccfe79-c1bb-4eca-8035-9f21648cb897.png)
+  ![readmeallure2](https://user-images.githubusercontent.com/65030809/194900141-2c4a3b79-b086-4279-97e6-6f1f85753c0f.png)
+
   
-  Clicking on the test node gives detailed information about the test:
+4. Clicking on the test node gives detailed information about the test:
   - Test name, its severity and duration
   - Test description and owner
   - Test execution
   
-5. ![readmeallure4](https://user-images.githubusercontent.com/65030809/194899713-1a10326e-4499-4ba3-b110-de561c0e6788.png)
+  ![readmeallure3](https://user-images.githubusercontent.com/65030809/194900164-516782d1-e6c1-4808-b6d6-d51e00ffd52f.png)
+
   
-  The 'execution' part shows all the actions taken to execute the test along with setup and tear down.
+5. The 'execution' part shows all the actions taken to execute the test along with setup and tear down.
+  
+  ![readmeallure4](https://user-images.githubusercontent.com/65030809/194900180-567c8911-6f85-4978-a8b7-70d2fec8a3b6.png)
