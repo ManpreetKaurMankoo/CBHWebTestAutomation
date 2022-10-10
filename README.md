@@ -20,7 +20,7 @@
 ---
 ## Features of the framework:
 **Please note**:
-Though I have added the provision to run the test on remote mode - selenoid, with (docker-compose.yml file and browsers.json file added) or without docker, I have not been able to execute using these due to docker related set up issues on my system (Windows Home). But I have added these anyway to showcase how the same can be achieved.
+Though I have added the provision to run the test on remote mode - selenoid, with (docker-compose.yml file and browsers.json file added), I have not been able to execute using it due to docker related set up issues on my system (Windows Home). But I have added it anyway to showcase how the same can be achieved.
 
 **The framework**:
 - Has separation of concerns
@@ -90,14 +90,6 @@ How to run the tests on selenoid using docker container:
 
 After running the above command, go to localhost:4444 and localhots:8080 to see the setup ready.
 Run the tests either through testng.xml or through maven. Execution could be seen at the above ports.
------
-
-1. Open command prompt/terminal → Go to the project path/directory using cd <project directory>→ Run the below command:
-
-**mvn clean test**
-
-Using the above command, maven surefire plugin in the pom.xml triggers the testng.xml file which has the details of the tests to be executed.
-
 -----
 How to view the allure report:
 
