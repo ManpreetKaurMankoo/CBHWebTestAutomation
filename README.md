@@ -142,4 +142,4 @@ The framework has the Dockerfile for creating its docker image. A workflow is cr
   
 5. The 'execution' part shows all the actions taken to execute the test along with setup and tear down.
   
-  ![readmeallure4](https://user-images.githubusercontent.com/65030809/194900180-567c8911-6f85-4978-a8b7-70d2fec8a3b6.png)
+  ![readmeallure4](https://user-images.githubusercontent.com/65030809/194914637-06028abc-2718-4e4b-84c4-21ed4fd8ce49.png)
