@@ -54,8 +54,6 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 - Is clean, readable, scalable, robust and maintenable
 - has been analysed using sonarlist for code quality
 ---
-## How to use the framework and how it works?
-
 ## Pre-requisites:
 
 - IDE - Eclipse/IntelliJ/Other
@@ -71,7 +69,7 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 How to run the tests (locally):
 
 It can be done in two ways:
-
+-----
 A. Through testng.xml file:
 1. Go to the testng.xml present at the root of the project.
 
@@ -83,7 +81,7 @@ B. Using maven through command prompt or git bash or terminal:
 **mvn clean test**
 
 Using the above command, maven surefire plugin in the pom.xml triggers the testng.xml file which has the details of the tests to be executed.
-
+-----
 How to run the tests on selenoid using docker container:
 1. Go to the path where docker-compose.yml file is present. Run the below command:
   
