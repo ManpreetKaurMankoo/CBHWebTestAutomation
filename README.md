@@ -17,6 +17,17 @@
 - Allure-Maven library v2.11.2 for integration between the two
 - WebDriverManager library v5.3.0 for managing web drivers like chrome (others if needed, in future)
 
+-----
+## Pre-requisites:
+
+- IDE - Eclipse/IntelliJ/Other
+- Maven
+- Allure
+- Install Lombok plugin and other settings to be done (if using Eclipse)
+- Java
+- TestNG
+- Docker should be installed to support running the test using selenoid
+
 ---
 ## Features of the framework:
 **Please note**:
@@ -53,16 +64,7 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 - Uses Page Object Model, Facade, Factory Method, Fluent, Builder design patterns
 - Is clean, readable, scalable, robust and maintenable
 - has been analysed using sonarlist for code quality
----
-## Pre-requisites:
 
-- IDE - Eclipse/IntelliJ/Other
-- Maven
-- Allure
-- Install Lombok plugin and other settings to be done (if using Eclipse)
-- Java
-- TestNG
-- Docker should be installed to support running the test using selenoid
 ---
 ## Test execution
 
@@ -73,20 +75,21 @@ It can be done in two ways:
 A. Using IDE through testng.xml file:
 1. Go to the testng.xml present at the root of the project.
 
-**Right click --> Run As --> TestNG Suite**
+   **Right click --> Run As --> TestNG Suite**
 
 B. Using maven through command prompt or git bash or terminal:
 1. Open command prompt/terminal → Go to the project path/directory using cd <project directory>→ Run the below command:
   
-**mvn clean test**
+   **mvn clean test**
 
 Using the above command, maven surefire plugin in the pom.xml triggers the testng.xml file which has the details of the tests to be executed.
   
 -----
 **How to run the tests on selenoid using docker container**:
-1. Go to the path where docker-compose.yml file is present. Run the below command:
+1. Make sure to change the runMode in FrameworkConfig.properties file to remote.
+2. Go to the path where docker-compose.yml file is present. Run the below command:
   
-**docker-compose up**
+   **docker-compose up**
 
 After running the above command, go to localhost:4444 and localhots:8080 to see the setup ready. Run the tests either through testng.xml or through maven. Execution could be seen at the above ports.
   
@@ -96,8 +99,43 @@ How to view the allure report:
 1. Execute the tests.
 2. To open Allure report, run the below command:
   
-**allure serve**
+   **allure serve**
   
+---
+#Dockerizing the test framework using Dockerfile and GitHub Actions workflow
+  
+The framework has the Dockerfile for creating its docker image. A workflow is created using GitHub Actions which can be run manually (afte the required tests pass) to dockerize the test framework and upload its image to DockerHub.
+
 ---
 ## Test Report
 
+1. After each test run, reports can be found under allure-results folder of the prject root
+  
+2. ![readmeallure1](https://user-images.githubusercontent.com/65030809/194899503-1336d5f2-8d7e-46ac-b7eb-8d9a317e10f1.png)
+
+  The Allure report 'Overview' section shows the following:
+  - Report date
+  - Start and end dates of the test run
+  - No. of tests passed, failed, skipped (In our case, only one test case available, so passed: 1)
+  - Test suites in the framework
+  - Features by stories in the framework
+  
+3. ![readmeallure2](https://user-images.githubusercontent.com/65030809/194899603-586ed548-af97-4456-80c9-156b3de8b902.png)
+
+  The 'Behaviours' section shows the following:
+  - Epic with its count
+  - Feature within Epic (with its count)
+  - Story within Feature (with its count)
+  - Test within Story with the time taken to run it
+  - No. of tests passed, failed, skipped, broken, etc with colour schemes
+  
+4. ![readmeallure3](https://user-images.githubusercontent.com/65030809/194899671-70ccfe79-c1bb-4eca-8035-9f21648cb897.png)
+  
+  Clicking on the test node gives detailed information about the test:
+  - Test name, its severity and duration
+  - Test description and owner
+  - Test execution
+  
+5. ![readmeallure4](https://user-images.githubusercontent.com/65030809/194899713-1a10326e-4499-4ba3-b110-de561c0e6788.png)
+  
+  The 'execution' part shows all the actions taken to execute the test along with setup and tear down.
