@@ -55,8 +55,10 @@ public final class SeleniumUtils {
 		AllureLogger.addAllureLog("Closed child window and switched back to parent window");
 	}
 
-	public static boolean isPresent(String loactorStrategy, Predicate<WebElement> webElementPredicate) {
-		return webElementPredicate.test(DriverManager.getDriver().findElement(By.xpath(loactorStrategy)));
+	public static boolean isPresent(String locatorStrategy, Predicate<WebElement> webElementPredicate, String featureSectionText) {
+		boolean isTextPresent = webElementPredicate.test(DriverManager.getDriver().findElement(By.xpath(locatorStrategy)));
+		AllureLogger.addAllureLog(featureSectionText + " text is fetched");
+		return isTextPresent;
 	}
 
 }

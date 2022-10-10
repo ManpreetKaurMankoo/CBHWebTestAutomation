@@ -12,7 +12,7 @@ public final class ProductDescComponent {
 
 	public boolean isRequiredTextPresent(String featureSectionText) {
 		String featureSectionNewXpath = DynamicXpathUtils.getDynamicXpath(FEATURE_SECTION, featureSectionText);
-		return isPresent(featureSectionNewXpath, WebElement::isDisplayed);
+		return isPresent(featureSectionNewXpath, WebElement::isDisplayed, featureSectionText);
 	}
 
 }
