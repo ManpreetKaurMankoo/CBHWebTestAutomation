@@ -2,11 +2,22 @@ name: Run Amazon Web Tests in GitHub Actions
 
 on:
   workflow_dispatch:
+    inputs:
+      browser:
+        type: choice
+        description: Choose a browser to run the tests on (Only chrome for now))
+        required: true
+        options:
+          - chrome
   
 jobs:
-  build:
+  test:
     name: Amazon Web automated tests
     runs-on: ubuntu-latest
+    
+    services:
+      selenium:
+        image: selenium/standalone-${{ github.event.inputs.browser }}
     
     steps:
       - name: Pull the project
