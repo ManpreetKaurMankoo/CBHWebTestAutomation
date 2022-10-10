@@ -19,10 +19,6 @@ jobs:
       ports:
         - 4444:4444
     
-    services:
-      selenium:
-        image: selenium/standalone-${{ github.event.inputs.browser }}
-    
     steps:
       - name: Pull the project
         uses: actions/checkout@v3
