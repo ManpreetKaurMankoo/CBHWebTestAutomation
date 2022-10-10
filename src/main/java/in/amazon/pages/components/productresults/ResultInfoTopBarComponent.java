@@ -10,8 +10,7 @@ import in.amazon.utils.dynamicxpath.DynamicXpathUtils;
 
 public final class ResultInfoTopBarComponent {
 
-	private static final By SORT_BY_DRPDWN_BUTTON = By.xpath("//*[@data-action='a-dropdown-button']//span[text()='Featured']");
-	// By.xpath("//*[@data-action='a-dropdown-button']//span");
+	private static final By SORT_BY_DRPDWN_BUTTON = By.xpath("//*[@data-action='a-dropdown-button']//span[text()='Sort by:']");
 	private static final String SORT_BY_DRPDWN_OPTION = "//*[contains(@id,'result-sort-select') and text()='%s']";
 
 	public ResultInfoTopBarComponent clickOnSortByDropDownBtn() {

@@ -10,6 +10,9 @@ public final class FrameworkConstants {
 	private static final int explicitWait = 20;
 
 	@Getter
+	private static final int explicitPause = 2;
+
+	@Getter
 	private static final String televisionDataFilePath = "testdata/televisiondata/television-data.json";
 
 }

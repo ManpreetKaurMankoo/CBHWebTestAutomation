@@ -1,6 +1,7 @@
 package in.amazon.driver.data;
 
 import in.amazon.driver.enums.BrowserType;
+import in.amazon.driver.enums.RemoteModeType;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -8,6 +9,7 @@ import lombok.Getter;
 @Builder
 public class DriverData {
 
+	private RemoteModeType remoteMode;
 	private BrowserType browserName;
 
 }
