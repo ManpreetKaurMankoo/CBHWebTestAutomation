@@ -2,22 +2,11 @@ name: Run Amazon Web Tests in GitHub Actions
 
 on:
   workflow_dispatch:
-    inputs:
-      browser:
-        type: choice
-        description: Choose a browser to run the tests on (Only chrome for now))
-        required: true
-        options:
-          - chrome
   
 jobs:
-  test:
+  build:
     name: Amazon Web automated tests
     runs-on: ubuntu-latest
-    
-    services:
-      selenium:
-        image: selenium/standalone-${{ github.event.inputs.browser }}
     
     steps:
       - name: Pull the project
@@ -28,17 +17,26 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+          
+      - name: Restore Docker image cache
+        uses: satackey/action-docker-layer-caching@v0.0.11
+        continue-on-error: true
+          
+      - name: Start Selenoid Server
+        uses: n-ton4/selenoid-github-action@master
+        id: start-selenoid
+        continue-on-error: false
+        with:
+          version: 1.10.1
+          args: -limit 10
+          browsers: chrome
+          last-versions: 1
 
       - name: Restore Maven cache
         uses: skjolber/maven-cache-github-action@v1
         continue-on-error: true
         with:
           step: restore
-          
-      - name: Install Chrome
-        uses: nanasess/setup-chromedriver@v1
-        
-      - run: chromedriver --url-base=/wd/hub &
           
       - name: Run the Web tests
         run: mvn clean test
