@@ -78,25 +78,23 @@ A. Through testng.xml file:
 
 B. Using maven through command prompt or git bash or terminal:
 1. Open command prompt/terminal → Go to the project path/directory using cd <project directory>→ Run the below command:
-
 **mvn clean test**
 
 Using the above command, maven surefire plugin in the pom.xml triggers the testng.xml file which has the details of the tests to be executed.
 
 How to run the tests on selenoid using docker container:
 1. Go to the path where docker-compose.yml file is present. Run the below command:
-
 **docker-compose up**
 
-After running the above command, go to localhost:4444 and localhots:8080 to see the setup ready.
-Run the tests either through testng.xml or through maven. Execution could be seen at the above ports.
+After running the above command, go to localhost:4444 and localhots:8080 to see the setup ready. Run the tests either through testng.xml or through maven. Execution could be seen at the above ports.
+  
 -----
 How to view the allure report:
 
 1. Execute the tests.
 2. To open Allure report, run the below command:
-
 **allure serve**
+  
 -----
 ## Test Report
 
