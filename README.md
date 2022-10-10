@@ -66,6 +66,10 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 - Is clean, readable, scalable, robust and maintenable
 - has been analysed using sonarlist for code quality
 
+##Framework design for better understanding
+
+![FrameworkDesign](https://user-images.githubusercontent.com/65030809/194949757-a31ccde5-5fcf-4072-a308-1fba42233b5b.png)
+
 ---
 ## Test execution
 
