@@ -16,7 +16,6 @@ import in.amazon.driver.enums.RunModeType;
 @Config.Sources({
 	"file:${user.dir}/src/test/resources/config/FrameworkConfig.properties"
 })
-
 public interface FrameworkConfig extends Config {
 
 	@DefaultValue("https://www.amazon.in ")

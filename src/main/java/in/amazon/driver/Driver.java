@@ -19,6 +19,7 @@ public final class Driver {
 				.remoteMode(getConfig().remoteMode())
 				.browserName(getConfig().browserName())
 				.build();
+		System.out.println("To be removed");
 
 		if(Objects.isNull(DriverManager.getDriver())) {
 			WebDriver driver = DriverFactory

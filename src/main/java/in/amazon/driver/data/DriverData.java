@@ -13,3 +13,5 @@ public class DriverData {
 	private BrowserType browserName;
 
 }
+
+
