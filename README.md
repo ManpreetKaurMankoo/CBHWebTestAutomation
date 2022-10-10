@@ -70,7 +70,7 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 
 It can be done in two ways:
 
-A. Through testng.xml file:
+A. Using IDE through testng.xml file:
 1. Go to the testng.xml present at the root of the project.
 
 **Right click --> Run As --> TestNG Suite**
