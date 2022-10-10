@@ -14,10 +14,6 @@ jobs:
   build:
     name: Amazon Web automated tests
     runs-on: ubuntu-latest
-    container:
-      image: selenium/standalone-${{ github.event.inputs.browser }}
-      ports:
-        - 4444:4444
     
     steps:
       - name: Pull the project
