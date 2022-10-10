@@ -17,6 +17,17 @@
 - Allure-Maven library v2.11.2 for integration between the two
 - WebDriverManager library v5.3.0 for managing web drivers like chrome (others if needed, in future)
 
+-----
+## Pre-requisites:
+
+- IDE - Eclipse/IntelliJ/Other
+- Maven
+- Allure
+- Install Lombok plugin and other settings to be done (if using Eclipse)
+- Java
+- TestNG
+- Docker should be installed to support running the test using selenoid
+
 ---
 ## Features of the framework:
 **Please note**:
@@ -30,6 +41,7 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 - Uses Data Supplier to supply the data from JSON file to the test in form of stream. More data can be added to this file for the same test. For more tests, more such JSON files and data supplier can be added
 - Uses POJOs and builder pattern for building test data
 - Data is passed to each required page through constructors in page layers
+- Has one test cases that runs and passes on chrome
 - Has one assertion verifying the 'About this item' text is present on the Product Description Page. It is a custom fluent assertion using AssertJ, more assertions can be added in a fluent way
 - Uses explicit wait strategy (Facatory Method pattern) for interacting with the web elements
 - Uses dynamic xpath creation strategy during run time for elements having common locator xpaths
@@ -53,16 +65,7 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 - Uses Page Object Model, Facade, Factory Method, Fluent, Builder design patterns
 - Is clean, readable, scalable, robust and maintenable
 - has been analysed using sonarlist for code quality
----
-## Pre-requisites:
 
-- IDE - Eclipse/IntelliJ/Other
-- Maven
-- Allure
-- Install Lombok plugin and other settings to be done (if using Eclipse)
-- Java
-- TestNG
-- Docker should be installed to support running the test using selenoid
 ---
 ## Test execution
 
@@ -70,23 +73,24 @@ Though I have added the provision to run the test on remote mode - selenoid, wit
 
 It can be done in two ways:
 
-A. Through testng.xml file:
+A. Using IDE through testng.xml file:
 1. Go to the testng.xml present at the root of the project.
 
-**Right click --> Run As --> TestNG Suite**
+   **Right click --> Run As --> TestNG Suite**
 
 B. Using maven through command prompt or git bash or terminal:
 1. Open command prompt/terminal → Go to the project path/directory using cd <project directory>→ Run the below command:
   
-**mvn clean test**
+   **mvn clean test**
 
 Using the above command, maven surefire plugin in the pom.xml triggers the testng.xml file which has the details of the tests to be executed.
   
 -----
 **How to run the tests on selenoid using docker container**:
-1. Go to the path where docker-compose.yml file is present. Run the below command:
+1. Make sure to change the runMode in FrameworkConfig.properties file to remote.
+2. Go to the path where docker-compose.yml file is present. Run the below command:
   
-**docker-compose up**
+   **docker-compose up**
 
 After running the above command, go to localhost:4444 and localhots:8080 to see the setup ready. Run the tests either through testng.xml or through maven. Execution could be seen at the above ports.
   
@@ -96,8 +100,46 @@ How to view the allure report:
 1. Execute the tests.
 2. To open Allure report, run the below command:
   
-**allure serve**
+   **allure serve**
   
+---
+#Dockerizing the test framework using Dockerfile and GitHub Actions workflow
+  
+The framework has the Dockerfile for creating its docker image. A workflow is created using GitHub Actions which can be run manually (afte the required tests pass) to dockerize the test framework and upload its image to DockerHub.
+
 ---
 ## Test Report
 
+1. After each test run, reports can be found under allure-results folder of the project root
+  
+2. The Allure report 'Overview' section shows the following:
+  - Report date
+  - Start and end dates of the test run
+  - No. of tests passed, failed, skipped (In our case, only one test case available, so passed: 1)
+  - Test suites in the framework
+  - Features by stories in the framework
+  
+  ![readmeallure1](https://user-images.githubusercontent.com/65030809/194900071-f9b813dc-fc92-4a51-aaad-c157995cfce7.png)
+
+  
+3. The 'Behaviours' section shows the following:
+  - Epic with its count
+  - Feature within Epic (with its count)
+  - Story within Feature (with its count)
+  - Test within Story with the time taken to run it
+  - No. of tests passed, failed, skipped, broken, etc with colour schemes
+  
+  ![readmeallure2](https://user-images.githubusercontent.com/65030809/194900141-2c4a3b79-b086-4279-97e6-6f1f85753c0f.png)
+
+  
+4. Clicking on the test node gives detailed information about the test:
+  - Test name, its severity and duration
+  - Test description and owner
+  - Test execution
+  
+  ![readmeallure3](https://user-images.githubusercontent.com/65030809/194900164-516782d1-e6c1-4808-b6d6-d51e00ffd52f.png)
+
+  
+5. The 'execution' part shows all the actions taken to execute the test along with setup and tear down.
+  
+  ![readmeallure4](https://user-images.githubusercontent.com/65030809/194900180-567c8911-6f85-4978-a8b7-70d2fec8a3b6.png)
